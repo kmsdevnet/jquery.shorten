@@ -50,16 +50,20 @@
                 if ($this.hasClass('less')) {
                     $this.removeClass('less');
                     $this.html(config.moreText);
-                    $this.parent().prev().animate({'height':'0'+'%'}, function () { $this.parent().prev().prev().show(); }).hide('fast', function() {
-                        config.onLess();
-                      });
+                    //$this.parent().prev().animate({'height':'0'+'%'}, function () { $this.parent().prev().prev().show(); }).hide('fast', function() {
+                    //    config.onLess();
+                    //  });
+                    $this.parent().prev().prev().show();
+                    config.onLess();
 
                 } else {
                     $this.addClass('less');
                     $this.html(config.lessText);
-                    $this.parent().prev().animate({'height':'100'+'%'}, function () { $this.parent().prev().prev().hide(); }).show('fast', function() {
-                        config.onMore();
-                      });
+                    //$this.parent().prev().animate({'height':'100'+'%'}, function () { $this.parent().prev().prev().hide(); }).show('fast', function() {
+                    //    config.onMore();
+                    //  });
+                    $this.parent().prev().prev().hide();
+                    config.onMore();
                 }
                 return false;
             }
@@ -138,7 +142,7 @@
 
                 var html = '<div class="shortcontent">' + c +
                     '</div><div class="allcontent">' + content +
-                    '</div><span><a href="javascript://nop/" class="morelink">' + config.moreText + '</a></span>';
+                    '</div><span class="shortspan"><a href="javascript://nop/" class="morelink">' + config.moreText + '</a></span>';
 
                 $this.html(html);
                 $this.find(".allcontent").hide(); // Hide all text
