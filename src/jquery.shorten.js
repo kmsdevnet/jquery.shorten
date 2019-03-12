@@ -53,6 +53,7 @@
                     //$this.parent().prev().animate({'height':'0'+'%'}, function () { $this.parent().prev().prev().show(); }).hide('fast', function() {
                     //    config.onLess();
                     //  });
+                    $this.parent().prev().hide();
                     $this.parent().prev().prev().show();
                     config.onLess();
 
@@ -62,6 +63,7 @@
                     //$this.parent().prev().animate({'height':'100'+'%'}, function () { $this.parent().prev().prev().hide(); }).show('fast', function() {
                     //    config.onMore();
                     //  });
+                    $this.parent().prev().show();
                     $this.parent().prev().prev().hide();
                     config.onMore();
                 }
